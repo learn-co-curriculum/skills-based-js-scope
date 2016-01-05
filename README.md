@@ -44,16 +44,19 @@ But translate that same code to JavaScript and you get a very different result:
 var x = 1;
 
 function myFunction(){
-  y = 2;
+  var y = 2;
   console.log(x);
 }
 
 
 myFunction();
+// prints out 1
 
 console.log(y)
+// error - y is not defined
 
 console.log(x)
+// prints out 1
 ```
 
 The function call `myFunction();` actually does work perfectly, even `console.log(x);` This is because the variable `x` is defined in the "global" scope. Any variable defined in the main scope is accessible inside any functions.
