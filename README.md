@@ -5,13 +5,14 @@
 + Explain what lexical or function-level scope is
 + Explain what block-level scope is
 + Explain how local and global variables work in JS
+
 # What Is Scope?
 
 Scope is the current context of your code, and can be locally or globally defined. Understanding scope is the key to understanding how your variables interact with each other in your code. Without a solid understanding of scope, your variables could be storing entirely different values than you think they are.
 
 ## Ruby Versus JavaScript Scope
 
-Ruby has **block-level** scope, which means that every block (like an if-statement, method, and class has their own scope.) Scope can be nested. You can have a class with it's own scope, inside that class a method with another scope, and even down to an if-statement inside that method with it's own scope. 
+Ruby has **block-level** scope, which means that every block (like an each block, method, and class has their own scope.) Scope can be nested. You can have a class with it's own scope, inside that class a method with another scope, and even down to an if-statement inside that method with it's own scope. 
 
 JavaScript handles scope a little bit differently. JavaScript has **function-level** or **lexical** scope, which means that every function you define has it's own scope, but no other structures do. 
 
