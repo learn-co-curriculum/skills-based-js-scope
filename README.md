@@ -6,7 +6,7 @@
 + Explain what block-level scope is
 + Explain how local and global variables work in JS
 
-# What Is Scope?
+## What Is Scope?
 
 Scope is the current context of your code, and can be locally or globally defined. Understanding scope is the key to understanding how your variables interact with each other in your code. Without a solid understanding of scope, your variables could be storing entirely different values than you think they are.
 
