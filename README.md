@@ -62,7 +62,7 @@ console.log(x)
 
 The function call `myFunction();` actually does work perfectly, even `console.log(x);` This is because the variable `x` is defined in the "global" scope. Any variable defined in the main scope is accessible inside any functions.
 
-However, anything defined in a function not accessible outside, which is why the `console.log(y);` does not work. `y` was only defined inside the `myFunction` function, making it inaccessible anywhere else.
+However, anything defined in a function is not accessible outside, which is why the `console.log(y);` does not work. `y` was only defined inside the `myFunction` function, making it inaccessible anywhere else.
 
 And again `console.log(x);` works because were printing it out in the scope in which it was defined.
 
@@ -119,3 +119,5 @@ Now, because of the `myFunction` call, the global variable `y` exists, and `cons
 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-scope-readme' title='JS Scope'>JS Scope</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-scope-readme'>Js Scope</a> on Learn.co and start learning to code for free.</p>
