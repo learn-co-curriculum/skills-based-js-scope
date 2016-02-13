@@ -97,7 +97,7 @@ console.log(x);
 ```
 
 
-If you copy and paste this into the JS Console, you'll get an error with `console.log(y);` At this point in time, even though `y` is a global function, the variable hasn't been defined. JavaScript has just stored a function called `myFunction`.
+If you copy and paste this into the JS Console, you'll get an error with `console.log(y);` At this point in time, even though `y` is a global variable, the variable hasn't been defined. JavaScript has just stored a function called `myFunction`.
 
 If we were to do this:
 
