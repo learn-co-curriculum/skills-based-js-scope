@@ -145,7 +145,52 @@ console.log(x);
 ```
 Now, because of the `myFunction` call, the global variable `y` exists, and `console.log(y)` will work!
 
-**NOTE:** We've over-simplified the case for JavaScript for the moment. ECMAScript 6 (ES6) introduces two new declarations, `let` and `const`. Scope-wise, the difference is that `let` and `const` have block-level scope whereas `var` only has function-level scope. This means that `let` and `const` inside, for example, an `if` block will restrict the use of a variable to that `if` block. You can try out the following at https://babeljs.io/repl
+## The Scope of Scope, or Getting Closure
+
+One of the most powerful things about scope in JavaScript is how easily we can mask variables from the global scope but still make them available in inner scopes.
+
+```js
+function scopeMask() {
+  var innerVariable = "I'm sort of a secret.";
+
+  return function innerScope() {
+    var inaccessible = "Nothing can touch me.";
+
+    return innerVariable;
+  }
+}
+```
+
+JavaScript has first-class functions, meaning that we can pass them around with ease. When we call `scopeMask()`, the returned value is itself a function. Let's give it a try:
+
+```js
+var myScope = scopeMask();
+
+// returns the stringified version of `innerScope()`
+myScope;
+```
+
+Cool! What happens if we try to call `innerScope()` directly?
+
+```js
+innerScope();
+```
+
+This will throw the error `undefined is not a function` (very helpful, JavaScript). But if we call `myScope` (the variable to which we assigned the output of `scopeMask()`):
+
+```js
+myScope();
+```
+
+We should see `"I'm sort of a secret."` returned! What happened?
+
+Inside `scopeMask()`, we made the variable `innerVariable` available to `innerScope()` in what we call a **closure**. A closure is the term used when *close over* a variable in an outer function to access that variable in an inner function. As we noted above, JavaScript functions have access to their entire outer scope, so the `innerScope()` function has access to `scopeMask()`'s environment and to the global (`window`) environment.
+
+Note, though, that `scopeMask()` doesn't know anything about what's in `innerScope()` — the variable `inaccessible` is aptly named, because we can't get at its value except inside `innerScope()`. 
+
+## A Final Note (Extra Credit)
+
+We've over-simplified the case for JavaScript for the moment. ECMAScript 6 (ES6) introduces two new declarations, `let` and `const`. Scope-wise, the difference is that `let` and `const` have block-level scope whereas `var` only has function-level scope. This means that `let` and `const` inside, for example, an `if` block will restrict the use of a variable to that `if` block. You can try out the following at https://babeljs.io/repl
 
 ```js
 if (true) {
