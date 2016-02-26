@@ -199,13 +199,13 @@ JavaScript functions have access to their entire outer scope, so the
 `innerScope()` function has access to `outerFunction()`'s environment and
 to the global (`window`) environment.
 
-Note, though, that `scopeMask()` doesn't know anything about what's in
+Note, though, that `outerFunction()` doesn't know anything about what's in
 `innerScope()` — the variable `inaccessible` is aptly named, because we can't
 get at its value except inside `innerScope()`.
 
 ## A Final Note (Extra Credit)
 
-We've over-simplified the case for JavaScript for the moment. ECMAScript 6 (ES6) introduces two new declarations, `let` and `const`. Scope-wise, the difference is that `let` and `const` have block-level scope whereas `var` only has function-level scope. This means that `let` and `const` inside, for example, an `if` block will restrict the use of a variable to that `if` block. You can try out the following at https://babeljs.io/repl
+We've over-simplified the case for JavaScript for the moment. ECMAScript 6 (ES6) introduces two new declarations, `let` and `const`. Scope-wise, the difference is that `let` and `const` have block-level scope whereas `var` only has function-level scope. This means that declaring with `let` and `const` inside, for example, an `if` block will restrict the use of a variable to that `if` block. You can try out the following at https://babeljs.io/repl
 
 ```js
 if (true) {
@@ -213,9 +213,9 @@ if (true) {
   var localVariable = "local";
 }
 
-// you should see:
-// // fizz
-// // blockVariable is not defined
+// when you run the following lines, you should see:
+// "local"
+// blockVariable is not defined
 // on the right-hand side of the lower middle part of your screen.
 console.log(localVariable);
 console.log(blockVariable);
