@@ -143,14 +143,11 @@ console.log(y);
 
 console.log(x);
 ```
-Now, because of the `myFunction` call, the global variable `y` exists, and
-`console.log(y)` will work!
+Now, because of the `myFunction` call, the global variable `y` exists, and `console.log(y)` will work!
 
 ## The Scope of Scope, or Getting Closure
 
-One of the most powerful things about scope in JavaScript is how easily we can
-hide variables from the global scope but still make them available in inner
-scopes.
+One of the most powerful things about scope in JavaScript is how easily we can hide variables from the global scope but still make them available in inner scopes.
 
 ```js
 function outerFunction() {
@@ -164,8 +161,8 @@ function outerFunction() {
 }
 ```
 
-JavaScript has first-class functions, meaning that we can pass them around with
-ease. When we call `outerFunction()`, the returned value is another function.
+JavaScript has first-class functions, meaning that we can pass them around with ease. When we call `outerFunction()`, the returned value is another function. 
+
 Let's give it a try:
 
 ```js
@@ -181,9 +178,7 @@ Cool! What happens if we try to call `innerScope()` directly?
 innerScope();
 ```
 
-This will throw the error `undefined is not a function` (very helpful,
-JavaScript). But if we call `myScope` (the variable to which we assigned the
-output of `outerFunction()`):
+This will throw the error `undefined is not a function` (very helpful, JavaScript). But if we call `myScope` (the variable to which we assigned the output of `outerFunction()`):
 
 ```js
 myScope();
@@ -191,17 +186,9 @@ myScope();
 
 We should see `"I'm sort of a secret."` returned! What happened?
 
-Inside `outerFunction()`, we made the variable `innerVariable` available to
-`innerScope()` in what we call a **closure**. In this example, `innerScope()`
-_remembers_ the environment it was created in, and it maintains references to
-variables declared in that environment in a closure. As we noted above,
-JavaScript functions have access to their entire outer scope, so the
-`innerScope()` function has access to `outerFunction()`'s environment and
-to the global (`window`) environment.
+Inside `outerFunction()`, we made the variable `innerVariable` available to `innerScope()` in what we call a **closure**. In this example, `innerScope()` _remembers_ the environment it was created in, and it maintains references to variables declared in that environment in a closure. As we noted above, JavaScript functions have access to their entire outer scope, so the `innerScope()` function has access to `outerFunction()`'s environment and to the global (`window`) environment.
 
-Note, though, that `outerFunction()` doesn't know anything about what's in
-`innerScope()` — the variable `inaccessible` is aptly named, because we can't
-get at its value except inside `innerScope()`.
+Note, though, that `outerFunction()` doesn't know anything about what's in `innerScope()` — the variable `inaccessible` is aptly named, because we can't get at its value except inside `innerScope()`.
 
 ## A Final Note (Extra Credit)
 
