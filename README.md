@@ -99,20 +99,11 @@ To determine a variable's scope in JavaScript, ask yourself two questions:
     1. Is it declared inside a function?
     2. Is it declared with the `var` keyword?
 
-If a variable is declared in the outermost scope of a project, it's going to be
-global no matter what – that is, whether you write `var foo = 'bar'` or
-`foo = 'bar'`. Remember, saying that a variable is "global" in JavaScript
-just means that it's a property of the top-most object. (In the browser,
-that object is `window`; in other environments (like Node.js), it could be
-`global`.)
+If a variable is declared in the outermost scope of a project, it's going to be global no matter what – that is, whether you write `var foo = 'bar'` or `foo = 'bar'`. Remember, saying that a variable is "global" in JavaScript just means that it's a property of the top-most object. (In the browser, that object is `window`; in other environments (like Node.js), it could be `global`.)
 
-Inside a function, variables declared with `var` are only available
-within that function's scope. Variable's declared without `var` attach
-themselves to the global object.
+Inside a function, variables declared with `var` are only available within that function's scope. Variable's declared without `var` attach themselves to the global object.
 
-Contrast this to Ruby's variable scoping mechanisms: Where Ruby uses prefixes to determine a variable's scope,
-JavaScript determines scope primarily based on where a variable is declared
-(and only when declared within a function does any sort of keyword prefix matter).
+Contrast this to Ruby's variable scoping mechanisms: Where Ruby uses prefixes to determine a variable's scope, JavaScript determines scope primarily based on where a variable is declared (and only when declared within a function does any sort of keyword prefix matter).
 
 In our `myFunction` function, the variable `y` was defined with the `var` keyword. If instead, we had done:
 
@@ -208,12 +199,7 @@ Note, though, that `outerFunction()` doesn't know anything about what's in `inne
 
 ## A Final Note (Extra Credit)
 
-We've over-simplified the case for JavaScript for the moment. ECMAScript 6 (ES6)
-introduces two new declarations, `let` and `const`. Scope-wise, the difference
-is that `let` and `const` have block-level scope whereas `var` only has
-function-level scope. This means that declaring with `let` and `const` inside,
-for example, an `if` block will restrict the use of a variable to that `if`
-block. You can try out the following at https://babeljs.io/repl
+We've over-simplified the case for JavaScript for the moment. ECMAScript 6 (ES6) introduces two new declarations, `let` and `const`. Scope-wise, the difference is that `let` and `const` have block-level scope whereas `var` only has function-level scope. This means that declaring with `let` and `const` inside, for example, an `if` block will restrict the use of a variable to that `if` block. You can try out the following at https://babeljs.io/repl
 
 ```js
 if (true) {
