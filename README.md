@@ -119,4 +119,30 @@ Inside `outerFunction()`, we made the variable `innerVariable` available to `inn
 
 Note, though, that `outerFunction()` doesn't know anything about what's in `innerScope()` — the variable `inaccessible` is aptly named, because we can't get at its value except inside `innerScope()`.
 
+## Shadowy Variables
+
+There were some hints about this concept above, but we want to explicitly draw attention to something called "variable shadowing." Take the following example:
+
+``` javascript
+const animal = 'dog';
+
+const makeZoo = function() {
+  const animal = 'cat';
+
+  console.log(`I think I'll put this ${animal} in the zoo.`);
+};
+
+makeZoo(); // "I think I'll put this cat in the zoo."
+
+animal // "dog"
+```
+
+Notice how even though we have two variables called `animal`, only the one declared inside the `makeZoo` function is used within the function, and only the one declared outside of the function is available outside of it.
+
+This is called "shadowing," when the inner variable _shadows_ the outer variable of the same name. While it might seem trivial here, it's easy to imagine how shadowing can cause problems in larger, more complex applications — our variables might have completely unexpected values! We might get dogs when we want cats!
+
+## Resources
+
+- [MDN: Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
+
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-scope-readme' title='JS Scope'>JS Scope</a> on Learn.co and start learning to code for free.</p>
