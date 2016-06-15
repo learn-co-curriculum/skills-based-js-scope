@@ -17,18 +17,20 @@ To determine a variable's scope in JavaScript, ask yourself two questions:
     1. Is it declared inside a function?
     2. Is it declared with the `var` keyword?
 
-If a variable is declared in the outermost scope of a project, it's going to be global no matter what – that is, whether you write `var foo = 'bar'` or `foo = 'bar'`. Remember, saying that a variable is "global" in JavaScript just means that it's a property of the top-most object. (In the browser, that object is `window`; in other environments (like Node.js), it could be `global`.)
+If a variable is declared in the outermost scope of a project, it's going to be global no matter what – that is, whether you write `var foo = 'bar'` or `foo = 'bar'`. Remember, saying that a variable is "global" simply means that it can be accessed everywhere.
 
-Inside a function, variables declared with `var`, `const`, or `let` are only available within that function's scope. Variable's declared without one of these keywords attach themselves to the global object.
+Think of something else that we could call global — maybe smiling. Everywhere you go, you can smile and people will know what you mean. Similarly, when we have a global variable, everywhere we go in a program, we know what that variable refers to.
+
+Variables declared with `var` are only available within that function's scope. Variable's declared without one of these keywords attach themselves to the global object.
 
 ``` javascript
 function myFunction() {
-  const y = 2;
+  var y = 2;
   console.log(y);
 }
 ```
 
-In `myFunction` function above, the variable `y` was defined with the `const` keyword, so it's only available inside the function. If we run `myFunction()` in console, we'll see `2` printed out. But if we try `console.log(y);` in console, we'll get an error. If instead, we write
+In `myFunction` function above, the variable `y` was defined with the `var` keyword, so it's only available inside the function. If we run `myFunction()` in console, we'll see `2` printed out. But if we try `console.log(y);` in console, we'll get an error. If instead, we write
 
 ```js
 function myFunction(){
@@ -42,7 +44,7 @@ We can call `console.log(y)` outside the function as well.
 Let's take another example:
 
 ```js
-const x = 1;
+var x = 1;
 
 function myFunction(){
   y = 2;
@@ -59,7 +61,7 @@ If you copy and paste this into the JS Console, you'll get an error with `consol
 If we were to do this:
 
 ```js
-const x = 1;
+var x = 1;
 
 function myFunction(){
   y = 2;
@@ -124,10 +126,10 @@ Note, though, that `outerFunction()` doesn't know anything about what's in `inne
 There were some hints about this concept above, but we want to explicitly draw attention to something called "variable shadowing." Take the following example:
 
 ``` javascript
-const animal = 'dog';
+var animal = 'dog';
 
-const makeZoo = function() {
-  const animal = 'cat';
+function makeZoo() {
+  var animal = 'cat';
 
   console.log(`I think I'll put this ${animal} in the zoo.`);
 };
