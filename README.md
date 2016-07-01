@@ -68,11 +68,11 @@ function myFunction(){
   console.log(x);
 }
 
-myFunction();
+myFunction(); // 1
 
-console.log(y);
+console.log(y); // 2
 
-console.log(x);
+console.log(x); // 1
 ```
 Now, because of the `myFunction` call, the global variable `y` exists, and `console.log(y)` will work!
 
@@ -148,3 +148,5 @@ This is called "shadowing," when the inner variable _shadows_ the outer variable
 - [MDN: Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-scope-readme' title='JS Scope'>JS Scope</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/skills-based-js-scope'>JavaScript Scope</a> on Learn.co and start learning to code for free.</p>
