@@ -30,7 +30,7 @@ function myFunction() {
 }
 ```
 
-In `myFunction` function above, the variable `y` was defined with the `var` keyword, so it's only available inside the function. If we run `myFunction()` in console, we'll see `2` printed out. But if we try `console.log(y);` in console, we'll get an error. If instead, we write
+In `myFunction` function above, the variable `y` was defined with the `var` keyword, so it's only available inside the function. If we run `myFunction()` in console, we'll see `2` printed out. But if we try `console.log(y);` in console, we'll get an error. If instead, we write and call
 
 ```js
 function myFunction(){
