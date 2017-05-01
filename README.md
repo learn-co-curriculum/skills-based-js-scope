@@ -39,7 +39,7 @@ function myFunction(){
 }
 ```
 
-We can call `console.log(y)` outside the function as well.
+We can't call `console.log(y)` outside the function as well.
 
 Let's take another example:
 
