@@ -21,7 +21,7 @@ If a variable is declared in the outermost scope of a project, it's going to be 
 
 Think of something else that we could call global — maybe smiling. Everywhere you go, you can smile and people will know what you mean. Similarly, when we have a global variable, everywhere we go in a program, we know what that variable refers to.
 
-Variables declared with `var` are only available within that function's scope. Variables declared without one of these keywords attach themselves to the global object.
+Variables declared with `var` are only available within that function's scope. Variables declared without `var` attach themselves to the global object.
 
 ``` javascript
 function myFunction() {
