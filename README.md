@@ -23,7 +23,7 @@ Think of something else that we could call global — maybe smiling. Everywhere 
 
 Variables declared with `var` are only available within that function's scope. Variables declared without `var` attach themselves to the global object.
 
-``` javascript
+```js
 function myFunction() {
   var y = 2;
   console.log(y);
@@ -125,14 +125,14 @@ Note, though, that `outerFunction()` doesn't know anything about what's in `inne
 
 There were some hints about this concept above, but we want to explicitly draw attention to something called "variable shadowing." Take the following example:
 
-``` javascript
+```js
 var animal = 'dog';
 
 function makeZoo() {
   var animal = 'cat';
 
   console.log(`I think I'll put this ${animal} in the zoo.`);
-};
+}
 
 makeZoo(); // "I think I'll put this cat in the zoo."
 
@@ -148,5 +148,3 @@ This is called "shadowing," when the inner variable _shadows_ the outer variable
 - [MDN: Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-scope-readme' title='JS Scope'>JS Scope</a> on Learn.co and start learning to code for free.</p>
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/skills-based-js-scope'>JavaScript Scope</a> on Learn.co and start learning to code for free.</p>
